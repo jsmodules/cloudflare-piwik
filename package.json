@@ -1,0 +1,28 @@
+{
+  "name": "piwik-cfapp",
+  "version": "0.1.0",
+  "description": "A Piwik app for CloudFlare",
+  "keywords": ["piwik", "analytics", "cloudflare"],
+  "bugs": {
+    "url" : "http://github.com/BitolaCo/piwik-cfapp",
+    "email" : "inbox@bitola.co"
+  },
+  "license": "MPL",
+  "author": {
+    "name" : "Brad Berger",
+    "email" : "brad@bradb.net",
+    "url" : "https://bradb.net"
+  },
+  "dependencies": { },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-imagemin": "^2.1.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-uglify": "^1.0.2",
+    "jshint-stylish": "^1.0.0",
+    "run-sequence": "^1.0.2"
+  },
+  "scripts": {
+    "test": "gulp test"
+  }
+}

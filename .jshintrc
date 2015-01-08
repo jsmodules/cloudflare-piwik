@@ -1,0 +1,27 @@
+{
+  "browser": true,
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": true,
+  "noempty": true,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+  "smarttabs": true,
+  "quotmark": "double",
+  "strict": true,
+  "unused": true,
+  "notypeof": true,
+  "freeze": true,
+  "forin": true,
+  "nonbsp": true,
+  "globals": {
+    "CloudFlare": true
+  }
+}
