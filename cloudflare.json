@@ -1,6 +1,6 @@
 {
     "main":"public/javascripts/piwik-app.js",
-    "name":"Piwik",
+    "name":"Piwik Open Source Web Analytics",
     "description": "Add Piwik open source web analytics to your site.",
     "version": "0.1.0",
     "category": "analytics",
