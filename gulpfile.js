@@ -5,7 +5,7 @@ var gulp = require("gulp"),
     runSequence = require("run-sequence");
 
 gulp.task("uglify", function() {
-    return gulp.src(__dirname + "/src/js/piwik-app.js")
+    return gulp.src(__dirname + "/src/js/piwik.js")
         .pipe(uglify())
         .pipe(gulp.dest(__dirname + "/public/javascripts"));
 });
