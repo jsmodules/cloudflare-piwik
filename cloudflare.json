@@ -1,0 +1,96 @@
+{
+    "main":"public/javascripts/piwik-app.js",
+    "name":"Piwik Open Source Web Analytics",
+    "description": "Add Piwik open source web analytics to your site.",
+    "version": "0.1.0",
+    "category": "analytics",
+    "account": { },
+    "billing": { },
+    "config":{
+        "details":{
+            "Category": "Analytics",
+            "Language": "English",
+            "Price": "Free to install, free to use. Bring your own Piwik server.",
+            "Restrictions": "None",
+            "CloudFlare": "<a href='http://www.cloudflare.com/terms' target='_blank'>Terms of use</a>"
+        },
+        "assets":{
+            "logos" : {
+                "200px": "./public/images/logo-200.png",
+                "132px": "./public/images/logo-132.png"
+            }
+        },
+        "interface": [
+            {
+                "id": "id",
+                "type": "string",
+                "name": "Piwik Site Id",
+                "description": "The id of the your Piwik site. (HINT: It's usually 1 unless you are tracking more than one domain)"
+            },
+            {
+                "id": "domain",
+                "type": "string",
+                "name": "Piwik server url",
+                "description": "The domain name of your Piwik install. (Do not include the http/https parameter",
+                "options": [
+                    {
+                        "label": "Yes, buy a ticket!",
+                        "value": "true"
+                    },
+                    {
+                        "label": "No, I am scared.",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "id": "ssl",
+                "type": "select",
+                "name": "Use SSL",
+                "description": "Select yes if your Piwik server support HTTPS connections.",
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": "true"
+                    },
+                    {
+                        "label": "No",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "id": "setDomainCookie",
+                "type": "select",
+                "name": "Track visitors across all sub-domains",
+                "description": "If no, when one visitor visits x.yourdomain.com and y.yourdomain.com, they will be counted as a unique visitor.",
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": "true"
+                    },
+                    {
+                        "label": "No",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "id": "prependDomain",
+                "type": "select",
+                "name": "Prepend the site domain to the page title when tracking",
+                "description": "If someone visits the 'About' page on blog.yourdomain.com it will be recorded as 'blog / About'. This is the easiest way to get an overview of your traffic by sub-domain.",
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": "true"
+                    },
+                    {
+                        "label": "No",
+                        "value": ""
+                    }
+                ]
+            }
+        ]
+    }
+}
