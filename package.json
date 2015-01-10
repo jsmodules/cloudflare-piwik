@@ -1,7 +1,7 @@
 {
-  "name": "piwik-cfapp",
+  "name": "cloudflare-integration-for-piwik",
   "version": "0.1.0",
-  "description": "A Piwik app for CloudFlare",
+  "description": "Piwik integration for CloudFlare",
   "keywords": ["piwik", "analytics", "cloudflare"],
   "bugs": {
     "url" : "http://github.com/BitolaCo/piwik-cfapp",

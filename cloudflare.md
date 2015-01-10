@@ -4,7 +4,7 @@ Piwik is the leading open source web analytics platform that gives you valuable
 insights into your website's visitors, your marketing campaigns and much more, so 
 you can optimize your strategy and online experience of your visitors.
 
-CloudFlare ensures Piwik Analytics is installed on all your pages, even error
+CloudFlare Integration for Piwik installed on all your pages, even error
 pages, with high-performance asynchronous code loading.
 
 ## Installing Piwik
@@ -25,3 +25,9 @@ If it's missing a feature you need, feel free to let us know by creating
 
 If you need support, feel free to [open an issue on GitHub](//github.com/BitolaCo/piwik_cfapp/issues),
 email us at [inbox@bitola.co](mailto:inbox@bitola.co).
+
+## Disclaimer
+
+This integration is not in any way affiliated with Piwik. Piwik is a registered trademark
+of [Matthieu Aubry](http://matthieu.net/). Use of the Piwik logo
+is in harmony with the [trademark policy established by Piwik](http://piwik.org/trademark/).
