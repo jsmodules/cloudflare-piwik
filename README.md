@@ -7,6 +7,34 @@ It (currently) does not support all the Piwik JavaScript tracking code
 features, so feel free to submit a PR if you can add any of the features.
 We'll be happy to merge it.
 
+## Browser Support
+
+A lot. Builds are tested thanks to [Sauce Labs](https://saucelabs.com/opensauce)
+and their awesome, free open source software plan, on the 
+following platforms:
+
+- Firefox (latest)
+- Firefox (beta)
+- Chrome (latest)
+- Chrome (beta)
+- Safari (OS X 10.10)
+- Safari (OS X 10.09)
+- Opera (latest)
+- Internet Explorer 8
+- Internet Explorer 9
+- Internet Explorer 10
+- Internet Explorer 11
+- Safari on iOS 6
+- Safari on iOS 7
+- Safari on iOS 8
+- Android (latest, currently 5)
+- Android 4.4
+- Android 4.3
+- Android 4.2
+- Android 4.1
+- Android 4.0
+
+
 ## Developing
 
 We're using a [GulpJS](http://gulpjs.com) powered build system. JavaScript code is 
@@ -53,6 +81,6 @@ gulp build
 
 ## To Do
 
-- Fuller test suite of browsers via [Sauce Labs](https://saucelabs.com/opensauce)
-- [Travis CI](https://travis-ci.org) integration.
+- ~~Fuller test suite of browsers via [Sauce Labs](https://saucelabs.com/opensauce)~~
+- ~~[Travis CI](https://travis-ci.org) integration.~~
 - Complete the tracking code options to match the Piwik dashboard.
