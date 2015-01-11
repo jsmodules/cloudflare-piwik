@@ -14,12 +14,10 @@ describe("script appending test suite", function() {
             var scripts = document.getElementsByTagName("script"),
                 found = false;
 
-            for(var s in scripts) {
-                if(scripts.hasOwnProperty(s)) {
-                    if(scripts[s].getAttribute("src") === c.getUrl() + "piwik.js") {
-                        found = true;
-                        break;
-                    }
+            for(var i = 0; i < scripts.length; i++) {
+                if(scripts[i].getAttribute("src") === c.getUrl() + "piwik.js") {
+                    found = true;
+                    break;
                 }
             }
 

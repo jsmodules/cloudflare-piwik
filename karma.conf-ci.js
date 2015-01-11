@@ -26,12 +26,6 @@ module.exports = function(config) {
       platform: "Linux",
       verion: "beta"
     },
-    "SL_Chrome_dev": {
-      base: "SauceLabs",
-      browserName: "chrome",
-      platform: "Linux",
-      verion: "dev"
-    },
     "SL_IE": {
       base: "SauceLabs",
       browserName: "internet explorer"
@@ -55,11 +49,8 @@ module.exports = function(config) {
       browserName: "firefox",
       version: "beta"
     },
-    "SL_Firefox_dev": {
-      base: "SauceLabs",
-      browserName: "firefox",
-      version: "dev"
-    },
+    // These don't work yet in Sauce connect.
+    /*
     "SL_iphone_ios8": {
       base: "SauceLabs",
       browserName: "iphone",
@@ -81,6 +72,7 @@ module.exports = function(config) {
       version: "6.1",
       deviceName: "iPhone"
     },
+     */
     "SL_android": {
       base: "SauceLabs",
       browserName: "android"
