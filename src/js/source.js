@@ -31,11 +31,10 @@ if (!String.prototype.endsWith) {
 }
 
 function truthy(val) {
-    return "undefined" !== typeof val
-        && !! val
-        && val !== "0"
-        && val !== "false"
-        && val !== "no";
+    return "undefined" !== typeof val &&
+        !! val && val !== "0" &&
+        val !== "false" &&
+        val !== "no";
 }
 
 function CfPiwik(config) {

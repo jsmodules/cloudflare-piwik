@@ -34,12 +34,26 @@ gulp.task("hint:fail", function() {
 });
 
 gulp.task("hint", function() {
-    return gulp.src(__dirname + "/src/source.js")
+    return gulp.src(__dirname + "/src/js/source.js")
         .pipe(jshint())
         .pipe(jshint.reporter("jshint-stylish"));
 });
 
 gulp.task("test", ["hint:fail"], function() {
+
+    return gulp.src(testFiles)
+        .pipe(karma({
+            configFile: "karma.conf.js",
+            action: "run"
+        }))
+        .on("error", function(err) {
+            // Make sure failed tests cause gulp to exit non-zero
+            throw err;
+        });
+
+});
+
+gulp.task("test:ci", ["hint:fail"], function() {
 
     return gulp.src(testFiles)
         .pipe(karma({

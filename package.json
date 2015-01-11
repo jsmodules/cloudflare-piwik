@@ -39,7 +39,7 @@
     "run-sequence": "^1.0.2"
   },
   "scripts": {
-    "test": "gulp test",
+    "test": "gulp test:ci",
     "start": "gulp"
   }
 }
