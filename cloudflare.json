@@ -2,7 +2,7 @@
     "main":"public/javascripts/piwik.js",
     "name":"CloudFlare integration for Piwik",
     "description": "Integrate Piwik open source web analytics into your site.",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "category": "analytics",
     "account": { },
     "billing": { },
