@@ -18,6 +18,11 @@ module.exports = function(config) {
     "SL_Chrome": {
       base: "SauceLabs",
       browserName: "chrome"
+    },
+    "SL_Firefox": {
+      base: "SauceLabs",
+      browserName: "internet explorer",
+      version: "9"
     }
   };
 
@@ -35,6 +40,7 @@ module.exports = function(config) {
     sauceLabs: {
       testName: "Cloudflare integration for Piwik unit tests"
     },
+    captureTimeout: 120000,
     customLaunchers: customLaunchers,
     browsers: Object.keys(customLaunchers),
     singleRun: true

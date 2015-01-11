@@ -2,6 +2,7 @@
   "name": "cloudflare-for-piwik",
   "version": "0.1.2",
   "description": "Piwik integration for CloudFlare",
+  "main": "karma.conf-ci.js",
   "keywords": [
     "piwik",
     "analytics",
@@ -39,7 +40,7 @@
     "run-sequence": "^1.0.2"
   },
   "scripts": {
-    "test": "gulp test:ci",
+    "test": "karma start karma.conf-ci.js",
     "start": "gulp"
   }
 }
