@@ -1,8 +1,8 @@
 {
     "main":"public/javascripts/piwik.js",
     "name":"CloudFlare integration for Piwik",
-    "description": "Integrate Piwik open source web analytics to your site.",
-    "version": "0.1.0",
+    "description": "Integrate Piwik open source web analytics into your site.",
+    "version": "0.1.2",
     "category": "analytics",
     "account": { },
     "billing": { },
@@ -31,17 +31,7 @@
                 "id": "domain",
                 "type": "string",
                 "name": "Piwik server url",
-                "description": "The domain name of your Piwik install. (Do not include the http/https parameter",
-                "options": [
-                    {
-                        "label": "Yes, buy a ticket!",
-                        "value": "true"
-                    },
-                    {
-                        "label": "No, I am scared.",
-                        "value": ""
-                    }
-                ]
+                "description": "The domain name of your Piwik install. (If you include the protocol, like https:// it will override the SSL setting)"
             },
             {
                 "id": "ssl",
@@ -55,7 +45,23 @@
                     },
                     {
                         "label": "No",
-                        "value": ""
+                        "value": "false"
+                    }
+                ]
+            },
+            {
+                "id": "setDoNotTrack",
+                "type": "select",
+                "name": "Enable client side DoNotTrack detection",
+                "description": "Tracking requests will not be sent if visitors do not wish to be tracked. Note: If server side DoNotTrack support has been enabled, this option will have no effect.",
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": "true"
+                    },
+                    {
+                        "label": "No",
+                        "value": "false"
                     }
                 ]
             },
@@ -63,7 +69,7 @@
                 "id": "setDomainCookie",
                 "type": "select",
                 "name": "Track visitors across all sub-domains",
-                "description": "If no, when one visitor visits x.yourdomain.com and y.yourdomain.com, they will be counted as a unique visitor.",
+                "description": "If no, when one visitor visits x.domain.com and y.domain.com, they will be counted as a unique visitor.",
                 "options": [
                     {
                         "label": "Yes",
@@ -71,7 +77,7 @@
                     },
                     {
                         "label": "No",
-                        "value": ""
+                        "value": "false"
                     }
                 ]
             },
@@ -79,7 +85,7 @@
                 "id": "prependDomain",
                 "type": "select",
                 "name": "Prepend the site domain to the page title when tracking",
-                "description": "If someone visits the 'About' page on blog.yourdomain.com it will be recorded as 'blog / About'. This is the easiest way to get an overview of your traffic by sub-domain.",
+                "description": "If someone visits the 'About' page on blog.domain.com it will be recorded as 'blog / About'. This is the easiest way to get an overview of your traffic by sub-domain.",
                 "options": [
                     {
                         "label": "Yes",
@@ -87,7 +93,7 @@
                     },
                     {
                         "label": "No",
-                        "value": ""
+                        "value": "false"
                     }
                 ]
             }

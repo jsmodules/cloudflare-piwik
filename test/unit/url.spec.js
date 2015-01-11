@@ -12,6 +12,14 @@ describe("url handling test suite", function () {
         expect(url.charAt(url.length - 1)).toBe("/");
     });
 
+    it("should not add trailing slash to url if has already", function () {
+        var c = new CfPiwik({
+            url: "localhost/"
+        });
+        var url = c.getUrl();
+        expect(url.charAt(url.length - 2)).toBe("t");
+    });
+
     it("should handle no ssl flag correctly", function () {
         var c = new CfPiwik({
             url: "localhost"
@@ -49,7 +57,7 @@ describe("url handling test suite", function () {
         expect(c.getUrl()).toBe("https://localhost/");
     });
 
-    it("should ignore ssl flag if have a http:// prefix", function () {
+    it("should ignore ssl (true) flag if have a http:// prefix", function () {
         var c = new CfPiwik({
             url: "http://localhost",
             ssl: true
@@ -57,7 +65,7 @@ describe("url handling test suite", function () {
         expect(c.getUrl()).toBe("http://localhost/");
     });
 
-    it("should ignore ssl flag if have a https:// prefix", function () {
+    it("should ignore ssl (false) flag if have a https:// prefix", function () {
         var c = new CfPiwik({
             url: "https://localhost",
             ssl: false
@@ -65,34 +73,20 @@ describe("url handling test suite", function () {
         expect(c.getUrl()).toBe("https://localhost/");
     });
 
-});
-
-describe("script appending test suite", function() {
-
-    it("should append the script tag with proper url", function(done) {
-
+    it("should ignore ssl (true) flag if have a // prefix", function () {
         var c = new CfPiwik({
-            url: "localhost"
+            url: "http://localhost",
+            ssl: true
         });
+        expect(c.getUrl()).toBe("http://localhost/");
+    });
 
-        setTimeout(function() {
-
-            var scripts = document.getElementsByTagName("script"),
-                found = false;
-
-            for(var s in scripts) {
-                if(scripts.hasOwnProperty(s)) {
-                    if(scripts[s].getAttribute("src") === c.getUrl() + "piwik.js") {
-                        found = true;
-                        break;
-                    }
-                }
-            }
-
-            expect(found).toBe(true);
-            done();
-
-        }, 0);
+    it("should ignore ssl (false) flag if have a // prefix", function () {
+        var c = new CfPiwik({
+            url: "https://localhost",
+            ssl: false
+        });
+        expect(c.getUrl()).toBe("https://localhost/");
     });
 
 });

@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - 0.11
+addons:
+  sauce_connect:
+    username:
+      secure: "wZkxB6CX/cn5PHbdlJdBLFmwChZB2s/NWPGImLgLwznYw06Kl7s1VOfseRHYyS8ZTQXkGkQtPfqVyLqktI/42zPwP/xQvaLHCBZc4OTpfJICmAzEfu4vPcBfh9FJt9/mS4bPHkPU8F1T+S8G1PiiZjpgc9NU1AfqgH8lMlRuaNo="
+    access_key:
+      secure: "QRp/sfrFSrWOY4AkoHBK1asMKVxeObc0zei2LMBQLuGI/Bgvr5WoLuaD9aaIukBpQ96xlGKrz9FJYHLdPN60IZ0E99gN8dVA/7Lhd7KylKfoF0jQyY7ZxVp6vBx/QG//gI8yCKzNPNGBF8qNbFU1vCi2JZw9m0WbLoxYcZaLkps="
+matrix:
+  fast_finish: true

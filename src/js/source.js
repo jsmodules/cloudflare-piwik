@@ -30,6 +30,14 @@ if (!String.prototype.endsWith) {
     });
 }
 
+function truthy(val) {
+    return "undefined" !== typeof val
+        && !! val
+        && val !== "0"
+        && val !== "false"
+        && val !== "no";
+}
+
 function CfPiwik(config) {
 
     // Console poly-fill.
@@ -40,10 +48,12 @@ function CfPiwik(config) {
     };
 
     this.config = {
+        id: 1,
         url: false,
         prependDomain: false,
         setDomainCookie: false,
-        ssl: false
+        ssl: false,
+        setDoNotTrack: true
     };
 
     if(config) {
@@ -69,18 +79,17 @@ CfPiwik.prototype.load = function() {
 
             _paq.push(["trackPageView"]);
             _paq.push(["enableLinkTracking"]);
-            _paq.push(["setDoNotTrack", true]);
+            _paq.push(["setDoNotTrack", truthy(this.config.setDoNotTrack)]);
+            _paq.push(["setTrackerUrl", url + "piwik.php"]);
+            _paq.push(["setSiteId", this.config.id]);
 
-            if (this.config.prependDomain) {
+            if (truthy(this.config.prependDomain)) {
                 _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
             }
 
-            if (this.config.setDomainCookie) {
-                _paq.push(["setDomainCookie"], "*." + document.domain);
+            if (truthy(this.config.setDomainCookie)) {
+                _paq.push(["setDomainCookie", "*." + document.domain]);
             }
-
-            _paq.push(["setTrackerUrl", url + "piwik.php"]);
-            _paq.push(["setSiteId", this.config.id]);
 
             var g = document.createElement("script");
             var s = document.getElementsByTagName("script")[0];

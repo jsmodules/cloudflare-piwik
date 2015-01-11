@@ -42,7 +42,7 @@ gulp.task("test", ["hint:fail"], function() {
 
     return gulp.src(testFiles)
         .pipe(karma({
-            configFile: "karma.conf.js",
+            configFile: "karma.local.conf.js",
             action: "run"
         }))
         .on("error", function(err) {
@@ -61,7 +61,7 @@ gulp.task("default", function() {
     gulp.watch(__dirname + "/src/img/**/*.js", ["image-min"]);
     gulp.src(testFiles)
         .pipe(karma({
-            configFile: "karma.conf.js",
+            configFile: "karma.local.conf.js",
             action: "watch"
         }));
 });
