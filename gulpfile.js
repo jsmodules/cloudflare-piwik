@@ -5,6 +5,7 @@ var gulp = require("gulp"),
     insert = require("gulp-file-insert"),
     runSequence = require("run-sequence"),
     karma = require("gulp-karma"),
+    fs = require("fs"),
     testFiles = [
         "src/js/source.js",
         "test/unit/**/*.spec.js"
@@ -42,7 +43,7 @@ gulp.task("test", ["hint:fail"], function() {
 
     return gulp.src(testFiles)
         .pipe(karma({
-            configFile: "karma.local.conf.js",
+            configFile: "karma.conf-ci.js",
             action: "run"
         }))
         .on("error", function(err) {
@@ -61,7 +62,7 @@ gulp.task("default", function() {
     gulp.watch(__dirname + "/src/img/**/*.js", ["image-min"]);
     gulp.src(testFiles)
         .pipe(karma({
-            configFile: "karma.local.conf.js",
+            configFile: "karma.conf.js",
             action: "watch"
         }));
 });

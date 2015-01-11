@@ -9,3 +9,9 @@ addons:
       secure: "QRp/sfrFSrWOY4AkoHBK1asMKVxeObc0zei2LMBQLuGI/Bgvr5WoLuaD9aaIukBpQ96xlGKrz9FJYHLdPN60IZ0E99gN8dVA/7Lhd7KylKfoF0jQyY7ZxVp6vBx/QG//gI8yCKzNPNGBF8qNbFU1vCi2JZw9m0WbLoxYcZaLkps="
 matrix:
   fast_finish: true
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+  - rackup  # start a Web server
+  - sleep 3 # give Web server some time to bind to sockets, etc
