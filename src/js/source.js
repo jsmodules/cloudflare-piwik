@@ -1,33 +1,23 @@
 "use strict";
 
-// String.prototype.startsWith poly-fill.
-// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
-if (! String.prototype.startsWith) {
-    Object.defineProperty(String.prototype, "startsWith", {
-        enumerable: false,
-        configurable: false,
-        writable: false,
-        value: function(searchString, position) {
-            position = position || 0;
-            return this.lastIndexOf(searchString, position) === position;
-        }
-    });
+function startsWith(str, prefix) {
+    if (String.prototype.startsWith) {
+        return str.toString().startsWith(prefix);
+    } else {
+        str = str.toString();
+        prefix = prefix.toString();
+        return str.substr(0, prefix.length) === prefix;
+    }
 }
 
-// String.prototype.endsWith poly-fill.
-// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
-if (!String.prototype.endsWith) {
-    Object.defineProperty(String.prototype, "endsWith", {
-        value: function(searchString, position) {
-            var subjectString = this.toString();
-            if (position === undefined || position > subjectString.length) {
-                position = subjectString.length;
-            }
-            position -= searchString.length;
-            var lastIndex = subjectString.indexOf(searchString, position);
-            return lastIndex !== -1 && lastIndex === position;
-        }
-    });
+function endsWith(str, suffix) {
+    if (String.prototype.endsWith) {
+        return str.toString().endsWith(suffix);
+    } else {
+        str = str.toString();
+        suffix = suffix.toString();
+        return str.toString().slice(suffix.length * -1) === suffix;
+    }
 }
 
 function truthy(val) {
@@ -117,9 +107,9 @@ CfPiwik.prototype.getUrl = function() {
     }
 
     var url = this.config.url.toString(),
-        hasProtocol = url.startsWith("http://") || url.startsWith("https://") || url.startsWith("//"),
+        hasProtocol = startsWith(url, "http://") || startsWith(url, "https://") || startsWith(url, "//"),
         useSSL = this.config.ssl || false,
-        endsWithSlash = url.endsWith("/");
+        endsWithSlash = endsWith(url, "/");
 
     if(! hasProtocol) {
         url = "http" + (useSSL ? "s" : "") + "://" + url;

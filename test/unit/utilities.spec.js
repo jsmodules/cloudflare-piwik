@@ -18,14 +18,18 @@ describe("js utility function test suite", function() {
         expect(truthy("false")).toBe(false);
     });
 
-    it("should handle String.prototype.startsWith", function() {
-        expect(str.startsWith("a")).toBe(true);
-        expect(str.startsWith("abc")).toBe(true);
+    it("should handle startsWith properly", function() {
+        expect(startsWith(str, "a")).toBe(true);
+        expect(startsWith(str, "abc")).toBe(true);
+        expect(startsWith(str, "123")).toBe(false);
+        expect(startsWith(str, "abcdefghijk")).toBe(false);
     });
 
-    it("should handle String.prototype.endsWith", function() {
-        expect(str.endsWith("g")).toBe(true);
-        expect(str.endsWith("efg")).toBe(true);
+    it("should handle endsWith properly", function() {
+        expect(endsWith(str, "g")).toBe(true);
+        expect(endsWith(str, "efg")).toBe(true);
+        expect(endsWith(str, "123")).toBe(false);
+        expect(endsWith(str, "abcdefghijk")).toBe(false);
     });
 
 });
