@@ -138,7 +138,7 @@ module.exports = function(config) {
     sauceLabs: {
       testName: "Cloudflare integration for Piwik unit tests"
     },
-    captureTimeout: 120000,
+    captureTimeout: 240000,
     customLaunchers: customLaunchers,
     browsers: Object.keys(customLaunchers),
     singleRun: true
