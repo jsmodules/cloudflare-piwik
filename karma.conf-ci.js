@@ -30,6 +30,11 @@ module.exports = function(config) {
       base: "SauceLabs",
       browserName: "internet explorer"
     },
+    "SL_IE_10": {
+      base: "SauceLabs",
+      browserName: "internet explorer",
+      version: "10"
+    },
     "SL_IE_9": {
       base: "SauceLabs",
       browserName: "internet explorer",
@@ -49,30 +54,24 @@ module.exports = function(config) {
       browserName: "firefox",
       version: "beta"
     },
-    // These don't work yet in Sauce connect.
-    /*
-    "SL_iphone_ios8": {
+    "SL_safari_ios8": {
       base: "SauceLabs",
       browserName: "iphone",
       platform: "OS X 10.9",
-      version: "8.1",
-      deviceName: "iPhone"
+      version: "8.1"
     },
-    "SL_iphone_ios7": {
+    "SL_safari_ios7": {
       base: "SauceLabs",
       browserName: "iphone",
       platform: "OS X 10.9",
-      version: "7.1",
-      deviceName: "iPhone"
+      version: "7.1"
     },
-    "SL_iphone_ios6": {
+    "SL_safari_ios6": {
       base: "SauceLabs",
       browserName: "iphone",
       platform: "OS X 10.8",
-      version: "6.1",
-      deviceName: "iPhone"
+      version: "6.1"
     },
-     */
     "SL_android": {
       base: "SauceLabs",
       browserName: "android"
