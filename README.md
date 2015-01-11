@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BitolaCo/piwik-cloudflare.svg?branch=master)](https://travis-ci.org/BitolaCo/piwik-cloudflare)
+
 This is a CloudFlare app to automatically inject Piwik tracking JavaScript
 code into your CloudFlare powered website.
 
