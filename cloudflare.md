@@ -21,7 +21,7 @@ To use this app you will first need your own Piwik instance. If you do not alrea
 
 ## Why Piwik?
 
-Piwik is a real-time analytics software, with more than 200 features to help you measure users and their activity o your website. 
+Piwik is a real-time analytics software, with [more than 200 features](https://piwik.org/features/) to help you measure users and their activity on your website. 
 
 Piwik is already trusted by more than 1 million websites worldwide!
 
