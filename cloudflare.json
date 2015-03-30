@@ -1,6 +1,6 @@
 {
     "main":"public/javascripts/piwik.js",
-    "name":"Piwik",
+    "name":"Piwik Analytics",
     "description": "Integrate Piwik open source web analytics in your website. To use this app you need your own <a href='https://www.cloudflare.com/apps/piwik_open_source_web_analytics'>Piwik instance</a> (Self-hosted or Cloud-hosted).",
     "version": "0.1.3",
     "category": "analytics",
