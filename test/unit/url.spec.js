@@ -20,29 +20,6 @@ describe("url handling test suite", function () {
         expect(url.charAt(url.length - 2)).toBe("t");
     });
 
-    it("should handle no ssl flag correctly", function () {
-        var c = new CfPiwik({
-            url: "localhost"
-        });
-        expect(c.getUrl()).toBe("http://localhost/");
-    });
-
-    it("should handle non-ssl flag correctly", function () {
-        var c = new CfPiwik({
-            url: "localhost",
-            ssl: ""
-        });
-        expect(c.getUrl()).toBe("http://localhost/");
-    });
-
-    it("should handle ssl flag correctly", function () {
-        var c = new CfPiwik({
-            url: "localhost",
-            ssl: true
-        });
-        expect(c.getUrl()).toBe("https://localhost/");
-    });
-
     it("should handle http:// prefixed urls correctly", function () {
         var c = new CfPiwik({
             url: "http://localhost"

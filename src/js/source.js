@@ -1,48 +1,40 @@
 "use strict";
 
-function startsWith(str, prefix) {
-    if (String.prototype.startsWith) {
-        return str.toString().startsWith(prefix);
-    } else {
-        str = str.toString();
-        prefix = prefix.toString();
-        return str.substr(0, prefix.length) === prefix;
-    }
+if (! String.prototype.startsWith) {
+  String.prototype.startsWith = function(searchString, position) {
+    position = position || 0;
+    return this.indexOf(searchString, position) === position;
+  };
 }
 
-function endsWith(str, suffix) {
-    if (String.prototype.endsWith) {
-        return str.toString().endsWith(suffix);
-    } else {
-        str = str.toString();
-        suffix = suffix.toString();
-        return str.toString().slice(suffix.length * -1) === suffix;
-    }
+if (! String.prototype.endsWith) {
+  String.prototype.endsWith = function(searchString, position) {
+      var subjectString = this.toString();
+      if (position === undefined || position > subjectString.length) {
+        position = subjectString.length;
+      }
+      position -= searchString.length;
+      var lastIndex = subjectString.indexOf(searchString, position);
+      return lastIndex !== -1 && lastIndex === position;
+  };
 }
 
 function truthy(val) {
     return "undefined" !== typeof val &&
-        !! val && val !== "0" &&
+        !! val &&
+        val !== "0" &&
         val !== "false" &&
         val !== "no";
 }
 
 function CfPiwik(config) {
 
-    // Console poly-fill.
-    this.log = console || {
-        error: function() {},
-        info: function() {},
-        log: function() {}
-    };
-
     this.config = {
         id: 1,
         url: false,
         prependDomain: false,
         setDomainCookie: false,
-        ssl: false,
-        setDoNotTrack: true
+        ssl: false
     };
 
     if(config) {
@@ -68,7 +60,6 @@ CfPiwik.prototype.load = function() {
 
             _paq.push(["trackPageView"]);
             _paq.push(["enableLinkTracking"]);
-            _paq.push(["setDoNotTrack", truthy(this.config.setDoNotTrack)]);
             _paq.push(["setTrackerUrl", url + "piwik.php"]);
             _paq.push(["setSiteId", this.config.id]);
 
@@ -91,9 +82,7 @@ CfPiwik.prototype.load = function() {
 
             window._paq = _paq;
 
-        } catch(e) {
-            this.log.error("[CF-PIWIK] ", e.message);
-        }
+        } catch(e) { }
 
     }
 
@@ -102,20 +91,17 @@ CfPiwik.prototype.load = function() {
 CfPiwik.prototype.getUrl = function() {
 
     if (! this.config.url) {
-        this.log.error("[CF-PIWIK] No server url defined. Can't continue");
         return false;
     }
 
-    var url = this.config.url.toString(),
-        hasProtocol = startsWith(url, "http://") || startsWith(url, "https://") || startsWith(url, "//"),
-        useSSL = this.config.ssl || false,
-        endsWithSlash = endsWith(url, "/");
+    var url = this.config.url.toString();
+    var hasProtocol = url.startsWith("http://") || url.startsWith("https://") || url.startsWith("//");
 
-    if(! hasProtocol) {
-        url = "http" + (useSSL ? "s" : "") + "://" + url;
+    if (! hasProtocol) {
+        url = "//" + url;
     }
 
-    if(! endsWithSlash) {
+    if (! url.endsWith("/")) {
         url += "/";
     }
 

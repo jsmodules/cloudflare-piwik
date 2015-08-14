@@ -2,7 +2,7 @@
     "main":"public/javascripts/piwik.js",
     "name":"Piwik Analytics",
     "description": "Integrate Piwik open source web analytics in your website. To use this app you need your own <a href='https://www.cloudflare.com/apps/piwik_open_source_web_analytics'>Piwik instance</a> (Self-hosted or Cloud-hosted).",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "category": "analytics",
     "account": { },
     "billing": { },
@@ -31,45 +31,13 @@
                 "id": "domain",
                 "type": "string",
                 "name": "Piwik server url",
-                "description": "The domain name of your Piwik install. (If you include the protocol, like https:// it will override the SSL setting)"
-            },
-            {
-                "id": "ssl",
-                "type": "select",
-                "name": "Use SSL",
-                "description": "Select yes if your Piwik server support HTTPS connections.",
-                "options": [
-                    {
-                        "label": "Yes",
-                        "value": "true"
-                    },
-                    {
-                        "label": "No",
-                        "value": "false"
-                    }
-                ]
-            },
-            {
-                "id": "setDoNotTrack",
-                "type": "select",
-                "name": "Enable client side DoNotTrack detection",
-                "description": "Tracking requests will not be sent if visitors do not wish to be tracked. Note: If server side DoNotTrack support has been enabled, this option will have no effect.",
-                "options": [
-                    {
-                        "label": "Yes",
-                        "value": "true"
-                    },
-                    {
-                        "label": "No",
-                        "value": "false"
-                    }
-                ]
+                "description": "The domain name of your Piwik install."
             },
             {
                 "id": "setDomainCookie",
                 "type": "select",
                 "name": "Track visitors across all sub-domains",
-                "description": "If no, when one visitor visits x.domain.com and y.domain.com, they will be counted as a unique visitor.",
+                "description": "If set to 'Yes', when one visitor visits x.domain.com and y.domain.com, they will be counted as a unique visitor.",
                 "options": [
                     {
                         "label": "Yes",

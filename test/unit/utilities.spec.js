@@ -19,17 +19,17 @@ describe("js utility function test suite", function() {
     });
 
     it("should handle startsWith properly", function() {
-        expect(startsWith(str, "a")).toBe(true);
-        expect(startsWith(str, "abc")).toBe(true);
-        expect(startsWith(str, "123")).toBe(false);
-        expect(startsWith(str, "abcdefghijk")).toBe(false);
+        expect(str.startsWith("a")).toBe(true);
+        expect(str.startsWith("abc")).toBe(true);
+        expect(str.startsWith("123")).toBe(false);
+        expect(str.startsWith("abcdefghijk")).toBe(false);
     });
 
     it("should handle endsWith properly", function() {
-        expect(endsWith(str, "g")).toBe(true);
-        expect(endsWith(str, "efg")).toBe(true);
-        expect(endsWith(str, "123")).toBe(false);
-        expect(endsWith(str, "abcdefghijk")).toBe(false);
+        expect(str.endsWith("g")).toBe(true);
+        expect(str.endsWith("efg")).toBe(true);
+        expect(str.endsWith("123")).toBe(false);
+        expect(str.endsWith("abcdefghijk")).toBe(false);
     });
 
 });

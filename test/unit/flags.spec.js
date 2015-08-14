@@ -9,7 +9,7 @@ describe("optional flags test suite", function() {
         var c = new CfPiwik({
             url: "localhost"
         });
-        expect(_paq.length).toBe(5);
+        expect(_paq.length).toBe(4);
     });
 
     it("should handle the prependDomain flag properly when set to false", function() {
@@ -17,7 +17,7 @@ describe("optional flags test suite", function() {
             url: "localhost",
             prependDomain: "0"
         });
-        expect(_paq.length).toBe(5);
+        expect(_paq.length).toBe(4);
     });
 
     it("should handle the prependDomain flag properly when set to true", function() {
@@ -25,14 +25,14 @@ describe("optional flags test suite", function() {
             url: "localhost",
             prependDomain: "1"
         });
-        expect(_paq.length).toBe(6);
+        expect(_paq.length).toBe(5);
     });
 
     it("should handle the setDomainCookie flag properly when not set", function() {
         var c = new CfPiwik({
             url: "localhost"
         });
-        expect(_paq.length).toBe(5);
+        expect(_paq.length).toBe(4);
     });
 
     it("should handle the setDomainCookie flag properly when set to false", function() {
@@ -40,7 +40,7 @@ describe("optional flags test suite", function() {
             url: "localhost",
             setDomainCookie: "0"
         });
-        expect(_paq.length).toBe(5);
+        expect(_paq.length).toBe(4);
     });
 
     it("should handle the setDomainCookie flag properly when set to true", function() {
@@ -48,7 +48,7 @@ describe("optional flags test suite", function() {
             url: "localhost",
             setDomainCookie: "1"
         });
-        expect(_paq.length).toBe(6);
+        expect(_paq.length).toBe(5);
     });
 
 });
