@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/BitolaCo/piwik-cloudflare.svg?branch=master)](https://travis-ci.org/BitolaCo/piwik-cloudflare)
+[![Build Status](https://travis-ci.org/bradberger/piwik-cloudflare.svg?branch=master)](https://travis-ci.org/bradberger/piwik-cloudflare)
 
 This is a CloudFlare app to automatically inject Piwik tracking JavaScript
 code into your CloudFlare powered website.
@@ -9,30 +9,9 @@ We'll be happy to merge it.
 
 ## Browser Support
 
-A lot. Builds are tested thanks to [Sauce Labs](https://saucelabs.com/opensauce)
-and their awesome, free open source software plan, on the 
-following platforms:
-
-- Firefox (latest)
-- Firefox (beta)
-- Chrome (latest)
-- Chrome (beta)
-- Safari (OS X 10.10)
-- Safari (OS X 10.09)
-- Opera (latest)
-- Internet Explorer 8
-- Internet Explorer 9
-- Internet Explorer 10
-- Internet Explorer 11
-- Safari on iOS 6
-- Safari on iOS 7
-- Safari on iOS 8
-- Android (latest, currently 5)
-- Android 4.4
-- Android 4.3
-- Android 4.2
-- Android 4.1
-- Android 4.0
+Browser support should be universal. Automated tests are
+run on all modern, evergreen browsers thanks to 
+[Sauce Labs](https://saucelabs.com/opensauce).
 
 
 ## Developing
@@ -81,6 +60,4 @@ gulp build
 
 ## To Do
 
-- ~~Fuller test suite of browsers via [Sauce Labs](https://saucelabs.com/opensauce)~~
-- ~~[Travis CI](https://travis-ci.org) integration.~~
 - Complete the tracking code options to match the Piwik dashboard.
