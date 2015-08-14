@@ -20,102 +20,22 @@ module.exports = function(config) {
       browserName: "chrome",
       platform: "Linux"
     },
-    "SL_Chrome_beta": {
-      base: "SauceLabs",
-      browserName: "chrome",
-      platform: "Linux",
-      verion: "beta"
-    },
     "SL_IE": {
       base: "SauceLabs",
       browserName: "internet explorer"
-    },
-    "SL_IE_10": {
-      base: "SauceLabs",
-      browserName: "internet explorer",
-      version: "10"
-    },
-    "SL_IE_9": {
-      base: "SauceLabs",
-      browserName: "internet explorer",
-      version: "9"
-    },
-    "SL_IE_8": {
-      base: "SauceLabs",
-      browserName: "internet explorer",
-      version: "8"
     },
     "SL_Firefox": {
       base: "SauceLabs",
       browserName: "firefox"
     },
-    "SL_Firefox_beta": {
-      base: "SauceLabs",
-      browserName: "firefox",
-      version: "beta"
-    },
-    "SL_safari_ios8": {
-      base: "SauceLabs",
-      browserName: "iphone",
-      platform: "OS X 10.9",
-      version: "8.1"
-    },
-    "SL_safari_ios7": {
-      base: "SauceLabs",
-      browserName: "iphone",
-      platform: "OS X 10.9",
-      version: "7.1"
-    },
-    "SL_safari_ios6": {
-      base: "SauceLabs",
-      browserName: "iphone",
-      platform: "OS X 10.8",
-      version: "6.1"
-    },
     "SL_android": {
       base: "SauceLabs",
       browserName: "android"
-    },
-    "SL_android_4_4": {
-      base: "SauceLabs",
-      browserName: "android",
-      platform: "linux",
-      version: "4.4"
-    },
-    "SL_android_4_3": {
-      base: "SauceLabs",
-      browserName: "android",
-      platform: "linux",
-      version: "4.3"
-    },
-    "SL_android_4_2": {
-      base: "SauceLabs",
-      browserName: "android",
-      platform: "linux",
-      version: "4.2"
-    },
-    "SL_android_4_1": {
-      base: "SauceLabs",
-      browserName: "android",
-      platform: "linux",
-      version: "4.1"
-    },
-    "SL_android_4_0": {
-      base: "SauceLabs",
-      browserName: "android",
-      platform: "linux",
-      version: "4.0"
     },
     "SL_safari": {
       base: "SauceLabs",
       browserName: "safari",
       platform: "OS X 10.10"
-    },
-    "SL_safari_7": {
-      base: "SauceLabs",
-      browserName: "safari",
-      platform: "OS X 10.9",
-      version: "7"
     },
     "SL_opera": {
       base: "SauceLabs",
