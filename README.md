@@ -1,4 +1,5 @@
 [![Build Status](https://semaphoreci.com/api/v1/projects/ec22e658-35b1-49f3-ba17-74f5688dc4ea/519555/badge.svg)](https://semaphoreci.com/brad/piwik-cloudflare)
+[![Code Climate](https://codeclimate.com/github/bradberger/piwik-cloudflare/badges/gpa.svg)](https://codeclimate.com/github/bradberger/piwik-cloudflare)
 
 This is a CloudFlare app to automatically inject Piwik tracking JavaScript
 code into your CloudFlare powered website.
