@@ -1,4 +1,4 @@
 languages:
-	JavaScript: true
+   JavaScript: true
 exclude_paths:
 - "gulpfile.js"
