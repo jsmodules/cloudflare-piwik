@@ -1,5 +1,6 @@
 [![Build Status](https://semaphoreci.com/api/v1/projects/ec22e658-35b1-49f3-ba17-74f5688dc4ea/519555/badge.svg)](https://semaphoreci.com/brad/piwik-cloudflare)
 [![Code Climate](https://codeclimate.com/github/bradberger/piwik-cloudflare/badges/gpa.svg)](https://codeclimate.com/github/bradberger/piwik-cloudflare)
+[![Coverage Status](https://coveralls.io/repos/bradberger/piwik-cloudflare/badge.svg?branch=master&service=github)](https://coveralls.io/github/bradberger/piwik-cloudflare?branch=master)
 
 This is a CloudFlare app to automatically inject Piwik tracking JavaScript
 code into your CloudFlare powered website.
@@ -11,14 +12,14 @@ We'll be happy to merge it.
 ## Browser Support
 
 Browser support should be universal. Automated tests are
-run on all modern, evergreen browsers thanks to 
+run on all modern, evergreen browsers thanks to
 [Sauce Labs](https://saucelabs.com/opensauce).
 
 
 ## Developing
 
-We're using a [GulpJS](http://gulpjs.com) powered build system. JavaScript code is 
-automatically built using Uglify . Just run 
+We're using a [GulpJS](http://gulpjs.com) powered build system. JavaScript code is
+automatically built using Uglify . Just run
 the follow command to get started:
 
 ```bash
